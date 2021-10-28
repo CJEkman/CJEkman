@@ -1,0 +1,15 @@
+# Custom aliases
+alias iztest="echo 'Running: bundle exec fastlane ios unit_tests' && bundle exec fastlane ios unit_tests dev:true"
+alias izcarthage="echo 'Running: bundle exec fastlane ios update_frameworks' && bundle exec fastlane ios update_frameworks dev:true"
+alias izcerts="echo 'Running: bundle exec fastlane ios certs' && bundle exec fastlane ios certs dev:true"
+alias izdevices="echo 'Running: bundle exec fastlane ios certs force_for_new_devices:true' && bundle exec fastlane ios certs force_for_new_devices:true dev:true"
+alias izloc="echo 'Running: bundler exec fastlane ios download_translations' && bundler exec fastlane ios download_translations dev:true"
+
+# Load rbenv
+eval "$(rbenv init -)"
+
+# Clean derived data
+cleandd() {
+    rm -rf ~/Library/Developer/Xcode/DerivedData
+    echo "Removed all derived data."
+}
