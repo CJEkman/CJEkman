@@ -8,6 +8,9 @@
 	name = Carl Ekman
 	email = cekman@paypal.com
 
+[credential]
+	helper = osxkeychain
+
 [alias]
 	a = add .
 	m = checkout master
@@ -27,17 +30,23 @@
 	nuke = !git add . && git reset --hard HEAD
 	fpush = push --force-with-lease
 
-[url "ssh://git@github.com/"]
-	insteadOf = https://github.com/
-
 [core]
 	editor = nano
 
 [pull]
 	rebase = true
-  
+
 [fetch]
 	prune = true
 
 [diff]
 	colorMoved = zebra
+
+[url "https://github.com"]
+	insteadof = ssh://git@github.com
+
+[url "https://github.com/"]
+	insteadof = git@github.com:
+
+[url "https://github.paypal.com"]
+	insteadof = ssh://git@github.paypal.com
